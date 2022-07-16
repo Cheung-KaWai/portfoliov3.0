@@ -26,7 +26,7 @@ export default function ProjectCard({ src, title, children, color }) {
       whileInView="onscreen"
       viewport={{ once: true }}
     >
-      <CardImage src={src} />
+      <CardImage src={src} alt="screenshot of project website" />
       <CardTitle>{title}</CardTitle>
       <Description>{children}</Description>
 
