@@ -37,7 +37,7 @@ export default function ProjectCard({ src, title, children, color }) {
 
 const ProjectCardContainer = styled(motion.article)`
   width: 100%;
-  min-height: 58rem;
+  min-height: 57.5rem;
   overflow: hidden;
   justify-self: center;
   display: flex;

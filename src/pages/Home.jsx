@@ -120,7 +120,7 @@ export default function Home() {
             business engineering at university. In my second year I had a course
             intro to java and I really liked it even though I failed the exam
             (blame it on the teacher lol). After my second year I decided to
-            take 180 degrees turn an apply for a programming course and now 3
+            take a 180 degrees turn an apply for a programming course and now 3
             years later I'm in my last year and can call myself a web developer.
           </Bio>
           <Grid>
