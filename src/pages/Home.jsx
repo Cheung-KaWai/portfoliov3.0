@@ -269,12 +269,9 @@ const ProjectList = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 10rem;
 
-  @media (max-width: 1000px) {
-    gap: 2rem;
-  }
-
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
+    row-gap: 5rem;
   }
 `;
 

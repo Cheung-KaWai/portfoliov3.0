@@ -37,7 +37,6 @@ export default function ProjectCard({ src, title, children, color }) {
 
 const ProjectCardContainer = styled(motion.article)`
   width: 100%;
-  min-height: 57.5rem;
   overflow: hidden;
   justify-self: center;
   display: flex;
@@ -62,6 +61,7 @@ const CardTitle = styled.h3`
 
 const Description = styled.p`
   color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 2rem;
 `;
 
 const Button = styled.button`
