@@ -18,7 +18,7 @@ const cardVariants = {
   },
 };
 
-export default function ProjectCard({ src, title, children, aos }) {
+export default function ProjectCard({ src, title, children }) {
   return (
     <ProjectCardContainer
       variants={cardVariants}
