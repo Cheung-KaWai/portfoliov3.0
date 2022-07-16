@@ -100,6 +100,7 @@ export default function Home() {
                   src={project.image.url}
                   title={project.title}
                   key={key}
+                  color={project.color}
                 >
                   {project.description}
                 </ProjectCard>

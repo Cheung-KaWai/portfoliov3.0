@@ -18,7 +18,7 @@ const cardVariants = {
   },
 };
 
-export default function ProjectCard({ src, title, children }) {
+export default function ProjectCard({ src, title, children, color }) {
   return (
     <ProjectCardContainer
       variants={cardVariants}
@@ -29,15 +29,19 @@ export default function ProjectCard({ src, title, children }) {
       <CardImage src={src} />
       <CardTitle>{title}</CardTitle>
       <Description>{children}</Description>
+
+      <Button color={color}>View Project</Button>
     </ProjectCardContainer>
   );
 }
 
 const ProjectCardContainer = styled(motion.article)`
   width: 100%;
-  height: auto;
+  min-height: 58rem;
   overflow: hidden;
   justify-self: center;
+  display: flex;
+  flex-direction: column;
 `;
 
 const CardImage = styled.img`
@@ -58,4 +62,40 @@ const CardTitle = styled.h3`
 
 const Description = styled.p`
   color: rgba(255, 255, 255, 0.5);
+`;
+
+const Button = styled.button`
+  transition: all 0.3s ease-out;
+  padding: 1rem 3rem;
+  margin-top: auto;
+  position: relative;
+  border-radius: 3px;
+  width: fit-content;
+  transition: all 0.3 ease-out;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+
+  &::after {
+    content: "Coming Soon";
+    display: block;
+    width: fit-content;
+    color: white;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(120%, 40%);
+    opacity: 0;
+    font-weight: 400;
+    transition: all 0.3s ease-out;
+  }
+
+  &:hover {
+    background-color: #dbe4ff;
+    color: #5c7cfa;
+    &::after {
+      opacity: 1;
+    }
+  }
 `;
