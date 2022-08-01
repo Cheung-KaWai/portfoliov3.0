@@ -5,7 +5,7 @@ import { useMediaQuery } from "react-responsive";
 import LinkButton from "../components/LinkButton";
 import { ReactComponent as Hero } from "../images/hero2.svg";
 import ProjectCard from "../components/ProjectCard";
-import Navigation from "../components/Nav/Navigation";
+import Navigation from "../components/nav/Navigation";
 import { Chip, Heart, Goals, Computer } from "../components/UI";
 import Footer from "../components/Footer/Footer";
 import { getProjects, getTags } from "../utils/data";
@@ -179,11 +179,11 @@ export default function Home() {
           </Grid>
         </SectionContent>
       </PageSection>
-      <PageSection>
+      {/* <PageSection>
         <SectionContent>
           <SectionTitle>Articles</SectionTitle>
         </SectionContent>
-      </PageSection>
+      </PageSection> */}
       <Footer />
     </>
   );
