@@ -30,7 +30,7 @@ export default function ProjectCard({ src, title, children, color }) {
       <CardTitle>{title}</CardTitle>
       <Description>{children}</Description>
 
-      <Button color={color}>View Project</Button>
+      <Button color={color}>View</Button>
     </ProjectCardContainer>
   );
 }
@@ -80,7 +80,7 @@ const Button = styled.button`
   &::after {
     content: "Coming Soon";
     display: block;
-    width: fit-content;
+    width: 200px;
     color: white;
     position: absolute;
     right: 0;

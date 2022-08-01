@@ -5,10 +5,11 @@ import { useMediaQuery } from "react-responsive";
 import LinkButton from "../components/LinkButton";
 import { ReactComponent as Hero } from "../images/hero2.svg";
 import ProjectCard from "../components/ProjectCard";
-import Navigation from "../components/nav/Navigation";
+import Navigation from "../components/Nav/Navigation";
 import { Chip, Heart, Goals, Computer } from "../components/UI";
 import Footer from "../components/Footer/Footer";
 import { getProjects, getTags } from "../utils/data";
+import { gsap } from "gsap";
 
 export default function Home() {
   const [projects, setProjects] = useState(null);
@@ -16,25 +17,22 @@ export default function Home() {
   const [tags, setTags] = useState(null);
   const [selectedTag, setSelectedTag] = useState("All");
 
-  useEffect(() => {
-    async function getAllData() {
-      const initialData = await getProjects();
-      setProjects(initialData);
-      setFilteredProjects(initialData);
-      setTags(await getTags());
-    }
-    getAllData();
-  }, []);
-
   const small = useMediaQuery({ query: "(max-width:700px" });
+
+  const dataInit = async () => {
+    const initialData = await getProjects();
+    setProjects(initialData);
+    setFilteredProjects(initialData);
+    setTags(await getTags());
+  };
 
   const handleFilter = (e) => {
     const tag = e.target.value;
     setSelectedTag(tag);
-    FilterProjects(tag);
+    filterProjects(tag);
   };
 
-  const FilterProjects = (value) => {
+  const filterProjects = (value) => {
     if (value === "All") {
       setFilteredProjects(projects);
     } else {
@@ -43,6 +41,10 @@ export default function Home() {
       );
     }
   };
+
+  useEffect(() => {
+    dataInit();
+  }, []);
 
   return (
     <>
@@ -160,6 +162,7 @@ export default function Home() {
                 <ListItem>Running</ListItem>
                 <ListItem>Fitness</ListItem>
                 <ListItem>Anime</ListItem>
+                <ListItem>Badminton</ListItem>
               </List>
             </Card>
             <Card>
@@ -174,6 +177,11 @@ export default function Home() {
               </List>
             </Card>
           </Grid>
+        </SectionContent>
+      </PageSection>
+      <PageSection>
+        <SectionContent>
+          <SectionTitle>Articles</SectionTitle>
         </SectionContent>
       </PageSection>
       <Footer />
@@ -341,3 +349,9 @@ const FilterButton = styled.button`
     font-size: 1.4rem;
   }
 `;
+
+/*React Three Fiber test*/
+// const ThreeContainer = styled.div`
+//   height: 100vh;
+//   width: 100%;
+// `;
